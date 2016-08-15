@@ -1,0 +1,11 @@
+<h1>Welcome to the blog!</h1>
+
+<%= link_to "New Post", new_post_path, class: "btn btn-primary" %>
+<div>
+  <%= will_paginate @posts %>
+  <% @posts.each do |post| %>
+    <div class="post">
+      <%= link_to post.title, post %>
+    </div>
+  <% end %>
+</div>

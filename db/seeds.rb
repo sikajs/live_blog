@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+(1..30).each do |i|
+  Post.create!( title: "test post #{i}", content: "test content #{i}" )
+end
