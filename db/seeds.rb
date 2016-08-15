@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+author = Author.create!(email: "sample@example.com", password: "password", password_confirmation: "password")
+
 (1..30).each do |i|
-  Post.create!( title: "test post #{i}", content: "test content #{i}" )
+  Post.create!( title: "test post #{i}", content: "test content #{i}", author: author )
 end

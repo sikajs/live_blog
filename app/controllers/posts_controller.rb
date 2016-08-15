@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.paginate(:page => params[:page], :per_page => 15).recent
+    @posts = Post.includes(:author).paginate(:page => params[:page], :per_page => 15).recent
   end
 
   def show
@@ -14,6 +14,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(posts_params)
+    @post.author = current_author
 
     if @post.save
       flash[:success] = "Post successfully created"
