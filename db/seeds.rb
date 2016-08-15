@@ -16,3 +16,4 @@ end
 (1..3).each do |i|
   Post.last.comments.create!(content: "test comment#{i}", author: author1)
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
