@@ -6,7 +6,7 @@
 <div>
   Add New Comment:
   <%= form_for([@post, Comment.new], remote: true) do |f| %>
-    <%= f.hidden_field :author, value: ("Anonymous" || current_author) %>
+    <%= f.hidden_field :author, value: (current_author || "Anonymous") %>
     <%= f.text_area :content %>
     <%= f.submit %>
   <% end %>
