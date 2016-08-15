@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.includes(:author).paginate(:page => params[:page], :per_page => 15).recent
+    @posts = Post.includes(:author).recent.page params[:page]
   end
 
   def show

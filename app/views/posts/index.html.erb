@@ -1,7 +1,7 @@
 <h1>Welcome to the blog!</h1>
 
 <div>
-  <%= will_paginate @posts %>
+  <%= paginate @posts %>
   <% @posts.each do |post| %>
     <div class="post">
       <%= link_to post.title, post %>

@@ -27,7 +27,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 
 # pagination
-gem 'will_paginate', '~> 3.1.0'
+gem 'kaminari'
 
 gem 'devise'
 
