@@ -7,7 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 author = Author.create!(email: "sample@example.com", password: "password", password_confirmation: "password")
+author1 = Author.create!(email: "user1@example.com", password: "password", password_confirmation: "password")
 
 (1..30).each do |i|
   Post.create!( title: "test post #{i}", content: "test content #{i}", author: author )
+end
+
+(1..3).each do |i|
+  Post.last.comments.create!(content: "test comment#{i}", author: author1)
 end

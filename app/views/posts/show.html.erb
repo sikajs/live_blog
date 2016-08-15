@@ -2,6 +2,19 @@
 <div>
   <%= @post.content %>
 </div>
+<hr/>
+<%= link_to "Add New Comment", new_post_comment_path(@post) %>
+<div>
+  <% if @post.comments.present? %>
+    <% @post.comments.each do |comment| %>
+      <div class="comment">
+        <%= comment.author.email %> say:
+        <span><i><%= comment.created_at.to_s(:long) %></i></span>
+        <p><%= comment.content %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
 <% if is_owner?(@post.author) %>
   <%= link_to "Edit", edit_post_path(@post) %>
