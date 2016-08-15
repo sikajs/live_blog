@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :authors
   resources :posts do
-    resources :comments, except: [:index, :show]
+    resources :comments, only: [:create]
   end
 
   root "posts#index"

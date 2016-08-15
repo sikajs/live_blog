@@ -1,0 +1,11 @@
+<div class="comment">
+  <% if comment.author %>
+    <%= comment.author.email %>
+  <% else %>
+    Anonymous
+  <% end %>
+  say:
+  <p><%= comment.content %></p>
+  <span><i><%= comment.created_at.to_s(:long) %></i></span>
+</div>
+<hr/>

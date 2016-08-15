@@ -2,16 +2,20 @@
 <div>
   <%= @post.content %>
 </div>
-<hr/>
-<%= link_to "Add New Comment", new_post_comment_path(@post) %>
+<br/>
 <div>
+  Add New Comment:
+  <%= form_for([@post, Comment.new], remote: true) do |f| %>
+    <%= f.hidden_field :author, value: ("Anonymous" || current_author) %>
+    <%= f.text_area :content %>
+    <%= f.submit %>
+  <% end %>
+</div>
+<hr/>
+<div id="comment_list">
   <% if @post.comments.present? %>
     <% @post.comments.each do |comment| %>
-      <div class="comment">
-        <%= comment.author.email %> say:
-        <span><i><%= comment.created_at.to_s(:long) %></i></span>
-        <p><%= comment.content %></p>
-      </div>
+      <%= render :partial => 'comments/comment', :locals => { :comment => comment } %>
     <% end %>
   <% end %>
 </div>
