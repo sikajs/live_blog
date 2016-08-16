@@ -34,6 +34,9 @@ gem 'devise'
 # Admin related gems
 gem 'activeadmin', github: 'activeadmin'
 
+gem 'omniauth-google-oauth2'
+
+gem 'figaro'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -13,3 +13,6 @@
 /tmp
 .ruby-version
 .byebug*
+
+# Ignore application configuration
+/config/application.yml
