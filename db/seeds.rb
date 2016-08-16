@@ -13,7 +13,9 @@ author1 = Author.create!(email: "user1@example.com", password: "password", passw
   Post.create!( title: "test post #{i}", content: "test content #{i}", author: author )
 end
 
-(1..3).each do |i|
+(1..2).each do |i|
   Post.last.comments.create!(content: "test comment#{i}", author: author1)
 end
+
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+AdminUser.create!(email: 'sikajs@gmail.com', password: 'password', password_confirmation: 'password')
